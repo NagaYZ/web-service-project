@@ -17,7 +17,7 @@ public class BikeClientMain{
             bikeRenter.rentBike(1, client1);
             //bikeRenter.rentBike(1L, client2);
             //bikeRenter.rentBike(1L, client1);
-            //bikeRenter.returnBike(1, client1, Status.GOOD, 5);
+            bikeRenter.returnBike(1, client1, Status.GOOD, 5);
             //bikeRenter.returnBike(1L, client2, Status.GOOD, 3);
             //bikeRenter.returnBike(1L, client1, Status.GOOD, 1);*/
         } catch (Exception e) {

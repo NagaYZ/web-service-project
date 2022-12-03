@@ -12,7 +12,7 @@ public class BankService {
 	
 	public BankService() throws ServiceException {
 		this.converter = new ConverterServiceLocator().getConverter();
-		this.openAccount(100,100,"GBP");
+		this.openAccount(100,600,"GBP");
 	}
 	
 	
