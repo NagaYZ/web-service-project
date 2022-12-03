@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from BikeServiceService WSDL service -->
+
+  <service name="BikeService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://service.uge.fr"/>
+      <parameter name="wsdlServiceElement" value="BikeServiceService"/>
+      <parameter name="schemaQualified" value="http://service.uge.fr"/>
+      <parameter name="wsdlServicePort" value="BikeService"/>
+      <parameter name="className" value="fr.uge.service.BikeService"/>
+      <parameter name="wsdlPortType" value="BikeService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://service.uge.fr" name="removeBikeFromPanier" qname="operNS:removeBikeFromPanier" soapAction="">
+        <parameter xmlns:pns="http://service.uge.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idClient" type="tns:int"/>
+        <parameter xmlns:pns="http://service.uge.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idBike" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://service.uge.fr" name="addBikeToPanier" qname="operNS:addBikeToPanier" soapAction="">
+        <parameter xmlns:pns="http://service.uge.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idClient" type="tns:int"/>
+        <parameter xmlns:pns="http://service.uge.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idBike" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://service.uge.fr" xmlns:retNS="http://service.uge.fr" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getBikePrice" qname="operNS:getBikePrice" returnQName="retNS:getBikePriceReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://service.uge.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idBike" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://service.uge.fr" xmlns:retNS="http://service.uge.fr" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="buyPanier" qname="operNS:buyPanier" returnQName="retNS:buyPanierReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://service.uge.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idClient" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://service.uge.fr" xmlns:retNS="http://service.uge.fr" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getPanier" qname="operNS:getPanier" returnQName="retNS:getPanierReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://service.uge.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idClient" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://service.uge.fr" xmlns:retNS="http://service.uge.fr" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="isAvailable" qname="operNS:isAvailable" returnQName="retNS:isAvailableReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://service.uge.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idBike" type="tns:int"/>
+      </operation>
+      <parameter name="allowedMethods" value="removeBikeFromPanier isAvailable addBikeToPanier buyPanier getBikePrice getPanier"/>
+
+  </service>
+</deployment>

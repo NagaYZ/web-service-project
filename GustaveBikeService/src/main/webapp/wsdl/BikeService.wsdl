@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.uge.fr" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.uge.fr" xmlns:intf="http://service.uge.fr" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.uge.fr" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="removeBikeFromPanier">
+    <complexType>
+     <sequence>
+      <element name="idClient" type="xsd:int"/>
+      <element name="idBike" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeBikeFromPanierResponse">
+    <complexType/>
+   </element>
+   <element name="addBikeToPanier">
+    <complexType>
+     <sequence>
+      <element name="idClient" type="xsd:int"/>
+      <element name="idBike" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addBikeToPanierResponse">
+    <complexType/>
+   </element>
+   <element name="getBikePrice">
+    <complexType>
+     <sequence>
+      <element name="idBike" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getBikePriceResponse">
+    <complexType>
+     <sequence>
+      <element name="getBikePriceReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="buyPanier">
+    <complexType>
+     <sequence>
+      <element name="idClient" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="buyPanierResponse">
+    <complexType>
+     <sequence>
+      <element name="buyPanierReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getPanier">
+    <complexType>
+     <sequence>
+      <element name="idClient" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getPanierResponse">
+    <complexType>
+     <sequence>
+      <element name="getPanierReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="isAvailable">
+    <complexType>
+     <sequence>
+      <element name="idBike" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="isAvailableResponse">
+    <complexType>
+     <sequence>
+      <element name="isAvailableReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="removeBikeFromPanierRequest">
+
+      <wsdl:part element="impl:removeBikeFromPanier" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buyPanierResponse">
+
+      <wsdl:part element="impl:buyPanierResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPanierRequest">
+
+      <wsdl:part element="impl:getPanier" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="isAvailableResponse">
+
+      <wsdl:part element="impl:isAvailableResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addBikeToPanierRequest">
+
+      <wsdl:part element="impl:addBikeToPanier" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buyPanierRequest">
+
+      <wsdl:part element="impl:buyPanier" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addBikeToPanierResponse">
+
+      <wsdl:part element="impl:addBikeToPanierResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getBikePriceResponse">
+
+      <wsdl:part element="impl:getBikePriceResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="isAvailableRequest">
+
+      <wsdl:part element="impl:isAvailable" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPanierResponse">
+
+      <wsdl:part element="impl:getPanierResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeBikeFromPanierResponse">
+
+      <wsdl:part element="impl:removeBikeFromPanierResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getBikePriceRequest">
+
+      <wsdl:part element="impl:getBikePrice" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="BikeService">
+
+      <wsdl:operation name="removeBikeFromPanier">
+
+         <wsdl:input message="impl:removeBikeFromPanierRequest" name="removeBikeFromPanierRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:removeBikeFromPanierResponse" name="removeBikeFromPanierResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addBikeToPanier">
+
+         <wsdl:input message="impl:addBikeToPanierRequest" name="addBikeToPanierRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addBikeToPanierResponse" name="addBikeToPanierResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getBikePrice">
+
+         <wsdl:input message="impl:getBikePriceRequest" name="getBikePriceRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getBikePriceResponse" name="getBikePriceResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buyPanier">
+
+         <wsdl:input message="impl:buyPanierRequest" name="buyPanierRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:buyPanierResponse" name="buyPanierResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPanier">
+
+         <wsdl:input message="impl:getPanierRequest" name="getPanierRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getPanierResponse" name="getPanierResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="isAvailable">
+
+         <wsdl:input message="impl:isAvailableRequest" name="isAvailableRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:isAvailableResponse" name="isAvailableResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="BikeServiceSoapBinding" type="impl:BikeService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="removeBikeFromPanier">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="removeBikeFromPanierRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removeBikeFromPanierResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addBikeToPanier">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addBikeToPanierRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addBikeToPanierResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getBikePrice">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getBikePriceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getBikePriceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buyPanier">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="buyPanierRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="buyPanierResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPanier">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPanierRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPanierResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="isAvailable">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="isAvailableRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="isAvailableResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="BikeServiceService">
+
+      <wsdl:port binding="impl:BikeServiceSoapBinding" name="BikeService">
+
+         <wsdlsoap:address location="http://localhost:8080/GustaveBikeService/services/BikeService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

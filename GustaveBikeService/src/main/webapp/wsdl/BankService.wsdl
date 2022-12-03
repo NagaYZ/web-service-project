@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://bankservice.uge.fr" xmlns:intf="http://bankservice.uge.fr" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://bankservice.uge.fr">
+  
+  <!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+   
+  <wsdl:types>
+      
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://bankservice.uge.fr">
+         
+      <element name="openAccount">
+            
+        <complexType>
+               
+          <sequence>
+                  
+            <element name="id" type="xsd:int"/>
+                  
+            <element name="amount" type="xsd:float"/>
+                  
+            <element name="currency" type="xsd:string"/>
+                 
+          </sequence>
+              
+        </complexType>
+           
+      </element>
+         
+      <element name="openAccountResponse">
+            
+        <complexType/>
+           
+      </element>
+         
+      <element name="debit">
+            
+        <complexType>
+               
+          <sequence>
+                  
+            <element name="id" type="xsd:int"/>
+                  
+            <element name="amount" type="xsd:float"/>
+                 
+          </sequence>
+              
+        </complexType>
+           
+      </element>
+         
+      <element name="debitResponse">
+            
+        <complexType>
+               
+          <sequence>
+                  
+            <element name="debitReturn" type="xsd:boolean"/>
+                 
+          </sequence>
+              
+        </complexType>
+           
+      </element>
+         
+      <element name="credit">
+            
+        <complexType>
+               
+          <sequence>
+                  
+            <element name="id" type="xsd:int"/>
+                  
+            <element name="amount" type="xsd:float"/>
+                 
+          </sequence>
+              
+        </complexType>
+           
+      </element>
+         
+      <element name="creditResponse">
+            
+        <complexType/>
+           
+      </element>
+        
+    </schema>
+     
+  </wsdl:types>
+     
+  <wsdl:message name="openAccountResponse">
+          
+    <wsdl:part element="impl:openAccountResponse" name="parameters">
+
+      </wsdl:part>
+       
+  </wsdl:message>
+     
+  <wsdl:message name="debitRequest">
+          
+    <wsdl:part element="impl:debit" name="parameters">
+
+      </wsdl:part>
+       
+  </wsdl:message>
+     
+  <wsdl:message name="debitResponse">
+          
+    <wsdl:part element="impl:debitResponse" name="parameters">
+
+      </wsdl:part>
+       
+  </wsdl:message>
+     
+  <wsdl:message name="openAccountRequest">
+          
+    <wsdl:part element="impl:openAccount" name="parameters">
+
+      </wsdl:part>
+       
+  </wsdl:message>
+     
+  <wsdl:message name="creditRequest">
+          
+    <wsdl:part element="impl:credit" name="parameters">
+
+      </wsdl:part>
+       
+  </wsdl:message>
+     
+  <wsdl:message name="creditResponse">
+          
+    <wsdl:part element="impl:creditResponse" name="parameters">
+
+      </wsdl:part>
+       
+  </wsdl:message>
+     
+  <wsdl:portType name="BankService">
+          
+    <wsdl:operation name="openAccount">
+               
+      <wsdl:input message="impl:openAccountRequest" name="openAccountRequest">
+
+       </wsdl:input>
+               
+      <wsdl:output message="impl:openAccountResponse" name="openAccountResponse">
+
+       </wsdl:output>
+            
+    </wsdl:operation>
+          
+    <wsdl:operation name="debit">
+               
+      <wsdl:input message="impl:debitRequest" name="debitRequest">
+
+       </wsdl:input>
+               
+      <wsdl:output message="impl:debitResponse" name="debitResponse">
+
+       </wsdl:output>
+            
+    </wsdl:operation>
+          
+    <wsdl:operation name="credit">
+               
+      <wsdl:input message="impl:creditRequest" name="creditRequest">
+
+       </wsdl:input>
+               
+      <wsdl:output message="impl:creditResponse" name="creditResponse">
+
+       </wsdl:output>
+            
+    </wsdl:operation>
+       
+  </wsdl:portType>
+     
+  <wsdl:binding name="BankServiceSoapBinding" type="impl:BankService">
+          
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+          
+    <wsdl:operation name="openAccount">
+               
+      <wsdlsoap:operation soapAction=""/>
+               
+      <wsdl:input name="openAccountRequest">
+                    
+        <wsdlsoap:body use="literal"/>
+                 
+      </wsdl:input>
+               
+      <wsdl:output name="openAccountResponse">
+                    
+        <wsdlsoap:body use="literal"/>
+                 
+      </wsdl:output>
+            
+    </wsdl:operation>
+          
+    <wsdl:operation name="debit">
+               
+      <wsdlsoap:operation soapAction=""/>
+               
+      <wsdl:input name="debitRequest">
+                    
+        <wsdlsoap:body use="literal"/>
+                 
+      </wsdl:input>
+               
+      <wsdl:output name="debitResponse">
+                    
+        <wsdlsoap:body use="literal"/>
+                 
+      </wsdl:output>
+            
+    </wsdl:operation>
+          
+    <wsdl:operation name="credit">
+               
+      <wsdlsoap:operation soapAction=""/>
+               
+      <wsdl:input name="creditRequest">
+                    
+        <wsdlsoap:body use="literal"/>
+                 
+      </wsdl:input>
+               
+      <wsdl:output name="creditResponse">
+                    
+        <wsdlsoap:body use="literal"/>
+                 
+      </wsdl:output>
+            
+    </wsdl:operation>
+       
+  </wsdl:binding>
+     
+  <wsdl:service name="BankServiceService">
+          
+    <wsdl:port binding="impl:BankServiceSoapBinding" name="BankService">
+               
+      <wsdlsoap:address location="http://localhost:8080/GustaveBikeService/services/BankService"/>
+            
+    </wsdl:port>
+       
+  </wsdl:service>
+  
+</wsdl:definitions>
