@@ -1,7 +1,7 @@
 ---
 title: Projet Services Web
 author: ATTAL Hugo, THEAS-LABAN Alexis \& ZAIANI Yassine
-date: Année universitaire 2022 - 2023
+date: Université Gustave Eiffel - 2022/2023
 geometry: margin=2cm
 output: pdf_document
 ---
