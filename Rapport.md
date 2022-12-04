@@ -10,7 +10,7 @@ output: pdf_document
 
 ## Introduction
 
-Notre application est constitué de plusieurs services Java permettant aux étudiants et employés de louer, d'acheter et de vendre des vélos.
+Notre application est constituée de plusieurs services Java permettant aux étudiants et employés de louer, d'acheter et de vendre des vélos.
 
 Ce projet est basé sur l'architecture RMI et le protocole SOAP.
 
@@ -40,10 +40,10 @@ Nous avons réalisé un Service Web pour chaque service proposé par *Eiffel Bik
 
 ## Difficultés Rencontrées
 
-Nous avons rencontrés beaucoup de problèmes avec la configuration des différents Services Web sur Eclipse. En particulier, pour trouver la bonne combinaison des différentes versions de Java, Tomcat et Apache Axis à utiliser pour les faire fonctionner. Cela nous à obliger à restructer le projet à plusieurs reprises.
+Nous avons rencontré beaucoup de problèmes avec la configuration des différents Services Web sur Eclipse. En particulier, pour trouver la bonne combinaison des différentes versions de Java, Tomcat et Apache Axis à utiliser pour les faire fonctionner. Cela nous à obliger à restructurer le projet à plusieurs reprises.
 
 ## Améliorations Possibles
 
 - Une interface graphique pour les étudiants et employés leur permettant de louer, d’acheter et de vendre des vélos.
 - Une interface graphique pour le client de *GustaveBikeService*, lui permettant de constituer un panier, le valider et payer.
-- Une meilleur API pour le convertisseur pour avoir les taux de change actuels.
+- Une meilleure API pour le convertisseur pour avoir les taux de change actuels.
